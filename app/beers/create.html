@@ -1,0 +1,34 @@
+<h2>Cadastro de cerveja</h2>
+
+<p>{{msg}}</p>
+
+
+<form name="beerForm" novalidate>
+  <div class="form-group" ng-class="{ 'has-error' : beerForm.name.$invalid && !beerForm.name.$pristine }">
+    <label for="">
+      <span>Name:</span>
+      <input type="text" name="name" data-ng-model='beer.name' data-ng-minlength=3  />
+    </label>
+    <p ng-show="beerForm.name.$invalid && !userForm.name.$pristine" class="help-block">Nome é obrigatório.</p>
+  </div>
+  <div class="form-group" ng-class="{ 'has-error' : beerForm.abv.$invalid && !beerForm.abv.$pristine }">
+    <label for="">
+      <span>ABV:</span>
+    <input type="number" name="abv" min=1 data-ng-model='beer.abv' />
+    </label>
+    <p ng-show="beerForm.abv.$invalid && !userForm.abv.$pristine" class="help-block">You name is required.</p>
+  </div>
+  <div class="form-group" ng-class="{ 'has-error' : beerForm.description.$invalid && !beerForm.description.$pristine }">
+    <label for="">
+      <span>Description:</span>
+      <textarea name="description" data-ng-model='beer.description'></textarea>
+    </label>
+  </div>
+  <div class="form-group">
+    <button data-ng-click='create(beer)' class='btn btn-lg' data-ng-disabled="beerForm.$invalid">Salvar</button>
+  </div>
+</form>
+
+
+
+

@@ -1,0 +1,33 @@
+<h2>Alteração de cerveja</h2>
+
+<p>{{msg}}</p>
+
+<p>
+beerForm.$dirty: {{beerForm.$dirty}} <br />
+beerForm.$pristine: {{beerForm.$pristine}} <br />
+
+</p>
+
+<form name="beerForm" novalidate>
+  <div class="form-group">
+    <label for="">
+      <span>Name:</span>
+      <input type="text" data-ng-model='beer.name' data-ng-minlength=3 />
+    </label>
+  </div>
+  <div class="form-group">
+    <label for="">
+      <span>ABV:</span>
+    <input type="number" min=1 data-ng-model='beer.abv' />
+    </label>
+  </div>
+  <div class="form-group">
+    <label for="">
+      <span>Description:</span>
+    <textarea data-ng-model='beer.description'></textarea>
+    </label>
+  </div>
+  <div class="form-group">
+    <button data-ng-click='save(beer)' class='btn btn-lg'>Salvar</button>
+  </div>
+</form>

@@ -1,0 +1,32 @@
+<h2>Cervejas</h2>
+
+<p>{{msg}}</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>ABV</th>
+      <th>Description</th>
+      <th colspan=2>Actions</th>
+    </tr>
+    <tr>
+      <th>Filtrar:</th>
+      <th colspan=4><input type="text" id="filtro" data-ng-model="filtro.name"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr data-ng-repeat='beer in beers | orderBy:predicate:reverse | filter:filtro'>
+      <td><a href="#/beers/{{beer._id}}">{{beer.name}}</a></td>
+      <td><a href="#/beers/{{beer._id}}">{{beer.abv}}</a></td>
+      <td><a href="#/beers/{{beer._id}}">{{beer.description | truncate:50 }}</a></td>
+      <td><a href="#/beers/{{beer._id}}/edit">Editar</a></td>
+      <td><span class="clickable" data-ng-click='remove(beer)'>Remover</span></td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan=5>Listagem das cervejas maneiras</td>
+    </tr>
+  </tfoot>
+</table>

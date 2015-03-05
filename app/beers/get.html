@@ -1,0 +1,46 @@
+<h2>Cerveja {{beer.name}}</h2>
+
+<!-- 
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>ABV</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{beer.name}}</td>
+      <td>{{beer.abv}}</td>
+      <td>
+        <a href="#/beers/{{beer._id}}/edit">Editar</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+ -->
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>ABV</th>
+      <th>Description</th>
+      <th colspan=2>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="#/beers/{{beer._id}}">{{beer.name}}</a></td>
+      <td><a href="#/beers/{{beer._id}}">{{beer.abv}}</a></td>
+      <td><a href="#/beers/{{beer._id}}">{{beer.description | truncate:50 }}</a></td>
+      <td><a href="#/beers/{{beer._id}}/edit">Editar</a></td>
+      <td></td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan=5>Listagem das cervejas maneiras</td>
+    </tr>
+  </tfoot>
+</table>
