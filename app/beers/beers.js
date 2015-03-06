@@ -5,7 +5,8 @@
   angular.module('myApp.beers', ['ngRoute',
     'myApp.beers.Filters',
     'myApp.beers.Services',
-    'myApp.beers.Controllers'
+    'myApp.beers.Controllers',
+    'myApp.beers.Directives'
     ])
 
   .config(['$routeProvider', function($routeProvider) {
