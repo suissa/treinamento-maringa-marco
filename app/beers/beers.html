@@ -11,12 +11,14 @@
       <th colspan=2>Actions</th>
     </tr>
     <tr>
-      <th>Filtrar:</th>
-      <th colspan=4><input type="text" id="filtro" data-ng-model="filtro.name"></th>
+      <th><filtro-cerveja modelo="filterTextName"></filter-name></th>
+      <th><filtro-cerveja modelo="filterTextABV"></th>
+      <th><filtro-cerveja modelo="filterTextDescription"></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
-    <tr data-ng-repeat='beer in beers | orderBy:predicate:reverse | filter:filtro'>
+    <tr data-ng-repeat='beer in beers | orderBy:predicate:reverse | filter:{name: filterTextName, abv:filterTextABV, description:filterTextDescription}'>
       <td><cerveja-nome></cerveja-nome></td>
       <td><cerveja-abv></cerveja-abv></td>
       <td><cerveja-description></cerveja-description></td>
