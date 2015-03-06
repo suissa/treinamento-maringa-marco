@@ -8,7 +8,7 @@
   .directive('cervejaDescription', [cervejaDescriptionDirective])
   .directive('cervejaAcaoEditar', [cervejaAcaoEditarDirective])
   .directive('cervejaAcaoRemover', [cervejaAcaoRemoverDirective])
-  // .directive('beerInputFilter', [BeerInputFilterDirective])
+  .directive('filtroCerveja', [BeerInputFilterDirective])
   ;
 
   function cervejaNomeDirective() {
@@ -71,19 +71,16 @@
     }
   }
 
-  function BeerInputFilterDirective($rootScope) {
+  function BeerInputFilterDirective() {
     return {
-      replace: true,
-      template: '<input type="text" id="filtro" placeholder="Digite aqui" />',
       restrict: 'E',
-      scope: false,
-      link: function($scope, $element, $attrs) {
-        $element.on('blur', function() {
-          alert('BLUR');
-          $scope.$root.$emit('evento', 'Emitindo evento')
-          console.log($scope.$root);
-        })
-      }
+      replace: true,
+      scope: {modelo: '='},
+      template: '<input type="text" data-ng-model="modelo">'
     }
   }
 })();
+
+
+
+
